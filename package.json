@@ -1,0 +1,12 @@
+{
+  "name": "enter-sandman",
+  "version": "1.0.0",
+  "description": "A backend JSON API for getting an overview on the most active users & individual users.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Akash Sawant",
+  "license": "MIT"
+}
