@@ -1,0 +1,47 @@
+# "!" denotes a required field
+# "[]" means this is a list of channels
+
+# Define the type of input expected
+
+type users {
+  id: ID
+  createdAt: String
+  name: String
+  count: ID
+  createdListings: [listings]
+  companies: [companies]
+  applications: [applications]
+  listings: [listings]
+}
+
+type companies {
+  id: ID
+  createdAt: String
+  name: String
+  isContact: Boolean
+}
+
+type listings {
+  id: ID
+  createdAt: String
+  created_by: ID
+  name: String
+  description: String
+}
+type applications {
+  id: ID
+  createdAt: String
+  listing: listings
+  coverLetter: String
+}
+
+#No Need to write Teams Type - Only for future Usecases
+type teams {
+  isContact: Boolean
+}
+
+# This type specifies the entry points into our API
+type Query {
+  users(id: ID!): users
+  topActiveUsers(page: Int!): [users]
+}
