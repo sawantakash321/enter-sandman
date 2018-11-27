@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "no-underscore-dangle": 0,
+    "no-console": "off"
+  },
+  "globals": {
+    "describe": 1,
+    "test": 1,
+    "expect": 1
+  }
+}
