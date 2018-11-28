@@ -2,8 +2,6 @@
 
 ## Features
 
-- **_async_** functions
-- Eslint - Airbnb
 - [Helmet](https://github.com/helmetjs/helmet) and [Rate limit](https://github.com/nfriedly/express-rate-limit) middlewares
 
 ## Getting Started
