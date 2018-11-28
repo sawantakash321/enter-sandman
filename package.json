@@ -5,13 +5,14 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon --exec babel-node src/server.js",
+    "test": "NODE_ENV=testing ",
     "build": "babel src --out-dir build",
     "serve": "NODE_ENV=production node --require @babel/polyfill build/server.js",
+    "eslint": "eslint 'src/**/*.js' 'test/*.js'",
+    "clean": "rm -rf build",
     "createIndex": "node test/createIndex.js",
     "createDB": "node test/createDB.js",
-    "populateDB": "node test/populateData.js",
-    "eslint": "eslint 'src/**/*.js' 'database/**/*.js'",
-    "clean": "rm -rf build"
+    "populateDB": "node test/populateData.js"
   },
   "keywords": [],
   "author": "Akash Sawant",

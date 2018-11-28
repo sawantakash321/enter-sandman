@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 const { pool } = require('../../utils');
 
-const { pageSize = 5 } = process.env;
+const { PAGE_SIZE = 5 } = process.env;
 
 const topActiveUsers = async (_, args) => {
   // If no parameter is provided, set 1
@@ -13,7 +13,7 @@ const topActiveUsers = async (_, args) => {
     }
   }
 
-  const offset = (page - 1) * pageSize;
+  const offset = (page - 1) * PAGE_SIZE;
 
   try {
     // Query to fetching overview on the most active users. Activity is a measure of total count of listings applied to. so ONLY the TOP ACTIVE USERS who have applied atleast ONCE since the past week will be fetched.
@@ -28,7 +28,7 @@ const topActiveUsers = async (_, args) => {
         ORDER BY 4 DESC
         OFFSET $1
         LIMIT $2`,
-      values: [offset, pageSize]
+      values: [offset, PAGE_SIZE]
     };
 
     // We don't need a transaction and we just need to run a single query, the pool has a convenience method to run a query on any available client in the pool. This is the preferred way to query with node-postgres if you can as it removes the risk of leaking a client.
