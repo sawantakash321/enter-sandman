@@ -3,3 +3,4 @@
 * Unit Testing
 * Snapshot Testing
 * Integration Testing
+* API test with supertest
