@@ -30,7 +30,10 @@
     "graphql-tools": "^4.0.3",
     "graphql-yoga": "^1.2.0",
     "express-rate-limit": "^2.11.0",
-    "helmet": "^3.10.0"
+    "helmet": "^3.10.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "regenerator-runtime": "^0.13.1"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
