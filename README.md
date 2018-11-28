@@ -8,6 +8,7 @@
 
 ## Getting Started
 
+
 ```bash
 # Clone repository
 https://github.com/sawantakash321/enter-sandman.git
@@ -28,19 +29,14 @@ npm install
 
 # Create and configure a .env file in the root directory
 DATABASE_URI=postgres://role:password@host:port/dbname
-
 PORT=3000
-
 NODE_ENV=production
-
 PAGE_SIZE=5
 
-#Configure DATABASE_URI in config directories
-
-1. [prod_keys](./src/config/prod_keys.js)
-2. [dev_keys](./src/config/dev_keys.js)
-2. [test_keys](./src/config/test_keys.js)
-
+# Configure DATABASE_URI in config directory (src/config)
+* prod_keys.js
+* dev_keys.js
+* test_keys.js
 
 ## Workflow:
 
