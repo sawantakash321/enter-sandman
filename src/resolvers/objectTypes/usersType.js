@@ -35,7 +35,7 @@ const listings = async (parent) => {
 
     const { rows: listingsRows } = await pool.query(listingsQuery);
 
-    if (listingsRows.length) {
+    if (!listingsRows.length) {
       return 'There are no records';
     }
 
@@ -60,7 +60,7 @@ const companies = async (parent) => {
 
     const { rows: companiesRows } = await pool.query(companiesQuery);
 
-    if (companiesRows.length) {
+    if (!companiesRows.length) {
       return 'There are no records';
     }
 
@@ -74,19 +74,16 @@ const companies = async (parent) => {
 
 const createdListings = async (parent) => {
   try {
-    const companiesQuery = {
+    const createdListingsQuery = {
       text: `SELECT l.id, l.created_at, l.name, l.description
               FROM listings l
               WHERE l.created_by = $1`,
       values: [parent.id]
     };
 
-    const { rows: companiesRows } = await pool.query(companiesQuery);
+    const { rows: createdListingsRows } = await pool.query(createdListingsQuery);
 
-    if (companiesRows.length) {
-      return 'There are no records';
-    }
-    return companiesRows;
+    return createdListingsRows;
   } catch (err) {
     setImmediate(() => {
       throw new Error(err);
@@ -95,7 +92,7 @@ const createdListings = async (parent) => {
 };
 const applications = async (parent) => {
   try {
-    const companiesQuery = {
+    const applicationsQuery = {
       text: `SELECT a.id, a.created_at, a.cover_letter, l.id,
               l.name , l.description
               FROM applications a
@@ -104,12 +101,12 @@ const applications = async (parent) => {
       values: [parent.id]
     };
 
-    const { rows: companiesRows } = await pool.query(companiesQuery);
+    const { rows: applicationsRows } = await pool.query(applicationsQuery);
 
-    if (companiesRows.length) {
+    if (!applicationsRows.length) {
       return 'There are no records';
     }
-    return companiesRows;
+    return applicationsRows;
   } catch (err) {
     setImmediate(() => {
       throw new Error(err);
