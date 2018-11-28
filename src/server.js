@@ -7,10 +7,12 @@ const { GraphQLServer } = require('graphql-yoga');
 const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+
 const bodyParser = require('body-parser');
 const { checkDbConnection } = require('./utils');
 const {
-  Query, companies, teams, applications, listings
+  Query, companies, teams, applications, listings, users
 } = require('./resolvers');
 
 const config = require('./config');
@@ -20,7 +22,8 @@ const resolvers = {
   companies,
   teams,
   applications,
-  listings
+  listings,
+  users
 };
 const typeDefs = './src/schema/schema.graphql';
 const server = new GraphQLServer({
@@ -52,6 +55,8 @@ server.express.use(bodyParser.json());
 
 // allow cross-origin requests
 server.express.use(cors());
+
+server.express.use(cookieParser());
 
 server.start(config.options, ({ port }) => {
   console.log(`Server running at http://localhost:${port}`);
