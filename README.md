@@ -37,9 +37,9 @@ PAGE_SIZE=5
 
 #Configure DATABASE_URI in config directories
 
-1. [prod_keys]('./src/config/prod_keys.js')
-2. [dev_keys]('./src/config/dev_keys.js')
-2. [test_keys]('./src/config/test_keys.js')
+1. [prod_keys](./src/config/prod_keys.js)
+2. [dev_keys](./src/config/dev_keys.js)
+2. [test_keys](./src/config/test_keys.js)
 
 
 ## Workflow:
