@@ -35,10 +35,6 @@ const listings = async (parent) => {
 
     const { rows: listingsRows } = await pool.query(listingsQuery);
 
-    if (!listingsRows.length) {
-      return 'There are no records';
-    }
-
     return listingsRows;
   } catch (err) {
     setImmediate(() => {
@@ -59,10 +55,6 @@ const companies = async (parent) => {
     };
 
     const { rows: companiesRows } = await pool.query(companiesQuery);
-
-    if (!companiesRows.length) {
-      return 'There are no records';
-    }
 
     return companiesRows;
   } catch (err) {
@@ -103,9 +95,6 @@ const applications = async (parent) => {
 
     const { rows: applicationsRows } = await pool.query(applicationsQuery);
 
-    if (!applicationsRows.length) {
-      return 'There are no records';
-    }
     return applicationsRows;
   } catch (err) {
     setImmediate(() => {

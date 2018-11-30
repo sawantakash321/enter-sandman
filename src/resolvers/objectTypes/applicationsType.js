@@ -18,14 +18,7 @@ const createdAt = (parent) => {
   return timestamp.slice(1, -1);
 };
 
-const listing = parent => ({
-  id: parent.listing_id,
-  name: parent.name,
-  description: parent.description
-});
-
 module.exports = {
-  listing,
   createdAt,
   id,
   coverLetter

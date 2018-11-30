@@ -33,11 +33,6 @@ const topActiveUsers = async (_, args) => {
 
     // We don't need a transaction and we just need to run a single query, the pool has a convenience method to run a query on any available client in the pool. This is the preferred way to query with node-postgres if you can as it removes the risk of leaking a client.
     const { rows: topUserActiveRows } = await pool.query(topActiveUserQuery);
-    console.log(JSON.stringify(topUserActiveRows));
-
-    if (!topUserActiveRows.length) {
-      return 'there are no records';
-    }
 
     return topUserActiveRows;
   } catch (err) {
@@ -66,10 +61,6 @@ const users = async (_, args) => {
     };
 
     const { rows: usersRows } = await pool.query(getUsersByIDQuery);
-
-    if (!usersRows.length) {
-      return 'There are no records';
-    }
 
     return usersRows[0];
   } catch (err) {
