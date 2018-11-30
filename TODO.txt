@@ -1,0 +1,7 @@
+* Validating Input Data
+* Handling Error and Status Codes
+* Unit Testing
+* Snapshot Testing
+* Integration Testing
+* API test with supertest
+* Minimize the dependencies and dev-dep as much as u can
